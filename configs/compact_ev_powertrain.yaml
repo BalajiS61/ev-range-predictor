@@ -1,0 +1,35 @@
+# Powertrain and battery parameters for the Compact EV (Step 3 detailed model).
+# Generic, literature-typical values for a ~150 kW PMSM and a ~61 kWh NMC pack.
+
+drivetrain:
+  gear_ratio: 9.0             # single-speed reduction (motor : wheel)
+  wheel_radius_m: 0.33        # dynamic rolling radius
+  gear_efficiency: 0.97       # gearbox + differential (both directions)
+
+motor:                         # PMSM + inverter, analytical loss model
+  peak_torque_nm: 310.0
+  peak_power_w: 150000.0
+  max_speed_rpm: 16000.0
+  loss_copper: 0.12            # k_c  [W/(N m)^2]   copper losses  ~ T^2
+  loss_iron: 1.0               # k_i  [W/(rad/s)]   iron losses    ~ w
+  loss_windage: 3.0e-6         # k_w  [W/(rad/s)^3] windage        ~ w^3
+  loss_constant_w: 500.0       # C    [W]           inverter/standby while operating
+
+regen:
+  max_power_w: 70000.0         # electrical regen limit at the motor
+  fade_start_kmh: 10.0         # regen starts fading out below this speed
+  fade_end_kmh: 5.0            # no regen below this speed (friction brakes only)
+
+battery:                       # equivalent-circuit model (R0 + one RC pair)
+  cells_series: 96
+  cells_parallel: 3
+  cell_capacity_ah: 58.0
+  cell_r0_ohm: 0.0010
+  cell_r1_ohm: 0.0006
+  cell_tau_s: 30.0
+  cell_v_min: 2.8
+  cell_v_max: 4.2
+  soc_min: 0.05                # usable window used for the range test
+  soc_max: 0.97
+  ocv_soc: [0.00, 0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00]
+  ocv_v:   [3.00, 3.40, 3.50, 3.58, 3.62, 3.66, 3.71, 3.79, 3.88, 3.97, 4.07, 4.18]

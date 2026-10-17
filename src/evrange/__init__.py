@@ -5,6 +5,9 @@ from evrange.dynamics import simulate, summarize
 from evrange.cycles import DriveCycle, concat_cycles, load_cycle_file, piecewise_cycle
 from evrange.cycle_stats import cycle_statistics
 from evrange.cycle_library import download_cycles, get_cycle, list_cycles
+from evrange.powertrain import Drivetrain, Motor
+from evrange.battery import BatteryPack
+from evrange.ev_model import EVModel, RegenStrategy
 
 __all__ = [
     "Vehicle",
@@ -18,5 +21,10 @@ __all__ = [
     "download_cycles",
     "get_cycle",
     "list_cycles",
+    "Drivetrain",
+    "Motor",
+    "BatteryPack",
+    "EVModel",
+    "RegenStrategy",
 ]
-__version__ = "0.2.0"
+__version__ = "0.3.0"
