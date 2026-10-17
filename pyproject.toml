@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "evrange"
-version = "0.6.0"
+version = "1.0.0"
 description = "EV drive-cycle energy consumption and range predictor (physics + ML)"
 readme = "README.md"
 requires-python = ">=3.10"
