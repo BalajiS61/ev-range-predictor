@@ -1,0 +1,14 @@
+# Generic compact EV (C-segment hatchback / small crossover class)
+name: Compact EV
+mass_kg: 1800.0               # curb mass
+payload_kg: 80.0              # driver
+drag_coefficient: 0.28
+frontal_area_m2: 2.30
+rolling_resistance: 0.009
+rotational_mass_factor: 0.05  # equivalent inertia of wheels/motor as fraction of mass
+drivetrain_efficiency: 0.90   # battery -> wheel (constant for Step 1; map in Step 3)
+regen_efficiency: 0.85        # wheel -> battery
+regen_fraction: 0.80          # share of braking power handled by regen (rest = friction)
+aux_power_w: 500.0            # 12 V loads, electronics (HVAC added in Step 4)
+battery_usable_kwh: 57.0
+air_density: 1.225
