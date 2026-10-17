@@ -1,0 +1,16 @@
+# Ambient-condition models for Step 4 (generic, literature-typical values).
+
+cabin:
+  setpoint_c: 21.0            # cabin target temperature
+  deadband_c: 3.0             # no HVAC between setpoint - deadband and setpoint + deadband
+  heat_loss_w_per_k: 150.0    # cabin heat-loss coefficient UA (incl. ventilation)
+  solar_load_w: 300.0         # extra cooling load when air-conditioning is active
+  heater_cop: 1.0             # 1.0 = PTC resistive heater; ~2-3 for a heat pump
+  cooling_cop: 2.5            # air-conditioning coefficient of performance
+  max_electrical_w: 6000.0    # HVAC electrical power limit
+
+battery_thermal:               # battery assumed at ambient temperature (no preconditioning)
+  activation_energy_j_mol: 25000.0   # Arrhenius temperature dependence of R0 and R1
+  reference_c: 25.0
+  capacity_temp_c:   [-20.0, -10.0, 0.0, 10.0, 25.0, 45.0]
+  capacity_factor:   [0.80,  0.88,  0.94, 0.98, 1.00, 1.00]
