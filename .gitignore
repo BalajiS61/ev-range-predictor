@@ -1,8 +1,11 @@
 .venv/
+.venv-*/
 __pycache__/
 *.pyc
 *.egg-info/
 .pytest_cache/
 results/
 data/raw/
+data/cycles/*.part
+data/cycles/wltp3b.txt
 .ipynb_checkpoints/
